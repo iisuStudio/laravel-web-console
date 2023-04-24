@@ -68,7 +68,7 @@ class LaravelWebConsoleServiceProvider extends ServiceProvider
     public function registerHelpers()
     {
         // Load the helpers in app/Http/helpers.php
-        if (file_exists($file = __DIR__.'/../helpers.php')) {
+        if (file_exists($file = __DIR__.'/../helpers.php') && ! function_exists('is_empty_string')) {
             require_once $file;
         }
     }
